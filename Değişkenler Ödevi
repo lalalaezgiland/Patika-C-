@@ -8,7 +8,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
 		{
 			Console.WriteLine("");
 
-			string str = "emn";
+			string str = "ezgi";
 			char ch = '2';
 			
 			byte b = 1;
@@ -45,9 +45,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
 			//String
 			string str1 = string.Empty; //Değeri boş bir string tanımlama ya da = null; yapılabilir.
-			str1 = "emn trkr";
-			string name = "emn";
-			string surname = "trkr";
+			str1 = "ezgi balkanoglu";
+			string name = "ezgi";
+			string surname = "balkanoglu";
 			string fullName = name + " " + surname;
 			Console.WriteLine(name);
 			Console.WriteLine(surname);
