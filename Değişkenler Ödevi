@@ -1,0 +1,91 @@
+using System;
+
+namespace MyApp // Note: actual namespace depends on the project name.
+{
+	internal class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.WriteLine("");
+
+			string str = "emn";
+			char ch = '2';
+			
+			byte b = 1;
+			sbyte c = 1;
+
+			short s = 2; 
+			ushort us = 2;
+
+			Int16 i16 = 2; 
+			int i = 4;
+			Int32 i32 = 4; 
+			Int64 i64 = 8; 
+
+			uint ui = 4;
+			long l = 8;
+			ulong ul = 8;
+
+			// Reel Sayılar
+			float f = 4;
+			double d = 8;
+			decimal de = 16;
+
+			
+			bool b1 = true;
+
+			DateTime dt = DateTime.Now;
+			Console.WriteLine(dt);
+
+			// Objeler
+			object o1 = "a";
+			object o2 = 'b';
+			object o3 = 4;
+			object o4 = 4.3;
+
+			//String
+			string str1 = string.Empty; //Değeri boş bir string tanımlama ya da = null; yapılabilir.
+			str1 = "emn trkr";
+			string name = "emn";
+			string surname = "trkr";
+			string fullName = name + " " + surname;
+			Console.WriteLine(name);
+			Console.WriteLine(surname);
+			Console.WriteLine(fullName);
+
+			//integer
+
+			int integer1 = 5;
+			int integer2 = 3;
+			int integer3 = integer1 * integer2;
+
+			// boolean
+
+			bool bool1 = 10 < 2; // true veya false döner
+
+			// Değişken Dönüşümleri
+			string str24 = "24";
+			int int24 = 24;
+			string yeniDeger = str24 + " " + int24.ToString();
+			Console.WriteLine(yeniDeger);
+
+			int int21 = int24 + Convert.ToInt32(str24);
+			Console.WriteLine(int21);
+
+			// Parse string dönüşümler icin kullanılır.
+			int int22 = int24 + int.Parse(str24); // Çıktısı 40
+
+			// datetime
+
+			string datetime1 = DateTime.Now.ToString("dd.MM.yyyy");
+			Console.WriteLine(datetime1);
+
+			string datetime2 = DateTime.Now.ToString("dd/MM/yyyy");
+			Console.WriteLine(datetime2);
+
+			string hour1 = DateTime.Now.ToString("HH:mm:ss");
+			Console.WriteLine(hour1);
+			Console.ReadKey();
+		}
+	}
+}
