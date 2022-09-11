@@ -1,0 +1,60 @@
+using System;
+
+namespace MyApp // Note: actual namespace depends on the project name.
+{
+	internal class Program
+	{
+		static void Main(string[] args)
+		{
+      
+      // try
+      // {
+      //   // Başarılı şekilde çalışmasını istediğiniz kod blogunu yazıyoruz.
+      //   Console.WriteLine("Bir sayı giriniz..");
+      //   int sayi = Convert.ToInt32(Console.ReadLine());
+      //   Console.WriteLine("girmiş olduğunuz sayı =" + sayi);
+      // }
+      // catch (Exception ex)
+      // {
+      //   // Hata durumunda nasıl davramasını istediğimiz kod blogu burada yer alır.
+      //   Console.WriteLine("Bir Hata Oluştu=> " + ex.Message.ToString());
+      // }
+      // finally
+      // {
+      //   // Hata olması veya olmaması farketmeksizin her durumda çalışan bloktur.
+      //   Console.WriteLine("İşlem Bi şekilde tamamlandı!");
+      // }
+
+      try
+      {
+        // int a = int.Parse(null);
+        // int a = int.Parse("test");
+        int a = int.Parse("-20000000000");
+      }
+      catch (ArgumentNullException ex)
+      {
+        Console.WriteLine("Boş Değer Girdiniz.");
+        Console.WriteLine(ex);
+        throw;
+      }
+      catch (FormatException ex)
+      {
+        Console.WriteLine("Veri Tipi Uygun Değil.");
+        Console.WriteLine(ex);
+        throw;
+      }
+      catch (OverflowException ex)
+      {
+        Console.WriteLine("Veri tipinin sınırlarının dışında bir değer girdiniz.");
+        Console.WriteLine(ex);
+        throw;
+      }
+      finally
+      {
+        Console.WriteLine("İşlem Başarılı veya Başarısız bir şekilde tamamlandı.")
+      }
+      
+			
+		}
+	}
+}
