@@ -1,0 +1,37 @@
+
+{
+    // Sort
+    int [] sayıDizisi = {23,12,4,86,72,3,11,17};
+
+    Console.WriteLine("SIRASIZ LİSTE");
+    foreach (var sayı in sayıDizisi)
+    Console.WriteLine(sayı);
+
+    Console.WriteLine("SIRALI LİSTE");
+    Array.Sort(sayıDizisi);
+    foreach (var sayı in sayıDizisi)
+    Console.WriteLine(sayı);
+
+    //Clear
+    Console.WriteLine("ARRAY CLEAR");
+    Array.Clear(sayıDizisi,2,2);
+    foreach (var sayı in sayıDizisi)
+    Console.WriteLine(sayı);
+
+    //Reverse
+    Console.WriteLine("REVERSE");
+    Array.Reverse(sayıDizisi);
+    foreach (var sayı in sayıDizisi)
+    Console.WriteLine(sayı);    
+
+    //IndexOf
+    Console.WriteLine("INDEXOF");
+    Console.WriteLine(Array.IndexOf(sayıDizisi,23)); 
+
+    //Resize
+    Console.WriteLine("RESIZE");    
+    Array.Resize<int>(ref sayıDizisi,9);
+    sayıDizisi[8] = 99;
+    foreach (var sayı in sayıDizisi)
+    Console.WriteLine(sayı);      
+}
