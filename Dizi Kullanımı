@@ -1,0 +1,41 @@
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        // Dizi Tanımlama
+         string[] renkler = new string[5];
+
+         string[] hayvanlar = {"Kedi", "Köpek","Kuş","Maymun"};
+         
+         int[] dizi;
+         dizi = new int[5];
+
+         //Dizilere Değer Atama ve Erişim
+         renkler[0] = "Mavi";
+         dizi[3] = 10;
+
+         Console.WriteLine(hayvanlar[1]);
+         Console.WriteLine(dizi[3]);
+         Console.WriteLine(renkler[0]);
+
+         //Döngüler Dizi Kullanımı
+         //Klavyeden Girilen n tane sayının ortalamasını hesaplayan program
+         Console.Write("Lütfen dizinin eleman sayısını giriniz: ");
+         int diziuzunluğu = int.Parse(Console.ReadLine());
+         int[] sayıDizisi = new int[diziuzunluğu];
+
+         for (int i = 0; i < diziuzunluğu; i++)
+         {
+            Console.Write("Lütfen {n}. sayıyıı giriniz", i+1);
+            sayıDizisi[i] = int.Parse(Console.ReadLine());
+         }
+
+         int toplam = 0;
+         foreach (var sayı in diziuzunluğu)
+            toplam += sayı;
+
+        Console.WriteLine("Ortalama :" + toplam/diziuzunluğu);
+
+    }
+}
