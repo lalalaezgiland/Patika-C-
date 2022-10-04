@@ -1,0 +1,166 @@
+SORU 1:
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+
+        Console.WriteLine("**** Soru 1 ****");
+        Console.WriteLine("Lütfen 20 sayı giriniz: ");
+        int x,ctr;
+        List<int> asal = new List<int>();
+        List<int> asalDegil = new List<int>();
+
+        try
+        {
+
+            for(int i = 0; i < 20; i++)
+            {
+                x = int.Parse(Console.ReadLine()); 
+                ctr = 0;
+
+                if(x<=0)
+                {
+                    Console.WriteLine("Pozitif bir sayı giriniz.");
+                }
+
+                for (int z = 2; z < x; z++)
+                {                    
+                    if(x%z == 0)
+                    {
+                        ctr++;
+                        break;                                                
+                    }                        
+                }
+
+                if(ctr == 0 && x != 1)
+                    asal.Add(x);                
+                else
+                    asalDegil.Add(x);
+            }
+
+            
+
+            asal.Sort();
+            asalDegil.Sort();
+
+            asal.ForEach(asals=> Console.WriteLine("Asal elemanlar: " + asals));
+            asalDegil.ForEach(asalD=> Console.WriteLine("Asal olmayan elemanlar: " + asalD));
+
+            Console.WriteLine("Asal olmayan liste eleman sayısı: " + asalDegil.Count);
+            Console.WriteLine("Asal olmayan liste ortalaması: " + asalDegil.Average());
+            Console.WriteLine("Asal liste eleman sayısı: " + asal.Count);            
+            Console.WriteLine("Asal liste ortalaması: " + asal.Average());
+
+        }
+        
+        catch (ArgumentNullException ex)
+        {
+            Console.WriteLine("Sayısal giriş yapınız: " + ex.ToString());
+        }
+
+        catch (FormatException ex)
+        {
+            Console.WriteLine("Sayı giriniz: " + ex.ToString());
+        }
+        
+
+    }
+}
+
+
+SORU2:
+internal class Program
+{
+    private static void Main(string[] args)
+    {   
+        Methods methods = new Methods();
+
+        //Tüm sayılar
+        List<int> G = new List<int>();
+        //Büyük sayılar
+        List<int> B = new List<int>();
+        //Küçük sayılar
+        List<int> K = new List<int>();
+
+        Console.WriteLine("****Soru 2****");
+
+        Console.WriteLine("Lütfen 20 adet sayı giriniz:");
+
+        for (int i = 0; i < 20; i++)
+        {
+            int x = int.Parse(Console.ReadLine());
+
+            G.Add(x);
+        }
+
+        G.Sort();
+
+        //Aşağıdakiler yerine Linq ile take() metodu kullanılabilir.
+
+        for (int y = 0; y < 3; y++)
+        {
+            K.Add(G[y]);
+        }
+
+        for(int z = 17; z<20; z++)
+        {
+            B.Add(G[z]);
+        }
+
+        float kAv = methods.GetAv(K);
+        float bAv = methods.GetAv(B);
+
+        Console.WriteLine("Küçük sayılar listesi ortalaması: " +  kAv);
+        Console.WriteLine("Büyük sayılar listesi ortalaması: " +  bAv);
+
+        Console.WriteLine("Ortalamaların toplamı: " + kAv + bAv);
+    }
+}
+
+class Methods
+{
+    public float GetAv(List<int> l)
+    {
+        float Average = 0;
+
+        foreach (int x in l)
+        {
+            Average = Average += x;
+        }
+        Average = Average/2;
+        return Average;
+    }
+}
+
+SORU3:
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        //Koleksiyonlar soru 3
+
+        var sesliler = new HashSet<char> {'a','e', 'ı', 'i', 'o', 'ö', 'u', 'ü'};
+        List<char> sHarfler = new List<char>();
+
+        Console.WriteLine("Bir cümle giriniz: ");
+
+        string s = Console.ReadLine().ToLower();
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            if(sesliler.Contains(s[i]))
+            {
+                sHarfler.Add(s[i]);
+            }    
+        }
+
+        sHarfler.Sort();
+        
+        foreach (var c in sHarfler)
+        {
+            Console.Write(c);
+        }
+    }
+}
